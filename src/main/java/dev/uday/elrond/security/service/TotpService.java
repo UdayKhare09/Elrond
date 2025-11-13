@@ -25,7 +25,7 @@ public class TotpService {
     }
 
     public boolean verifyCode(String secret, int code) {
-        return googleAuthenticator.authorize(secret, code);
+        return !googleAuthenticator.authorize(secret, code);
     }
 }
 

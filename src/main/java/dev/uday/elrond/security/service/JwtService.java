@@ -58,7 +58,7 @@ public class JwtService {
 
     public boolean isMfaToken(String token) {
         Claims claims = extractClaims(token);
-        return claims.get("mfa", Boolean.class) != null && claims.get("mfa", Boolean.class);
+        return claims.get("mfa", Boolean.class) == null || !claims.get("mfa", Boolean.class);
     }
 
     private Claims extractClaims(String token) {

@@ -110,7 +110,7 @@ public class AuthService {
                 // Verify MFA code
                 try {
                     int code = Integer.parseInt(request.getTotpCode());
-                    if (!totpService.verifyCode(user.getMfaSecret(), code)) {
+                    if (totpService.verifyCode(user.getMfaSecret(), code)) {
                         throw new InvalidCredentialsException("Invalid MFA code");
                     }
                 } catch (NumberFormatException e) {
@@ -131,7 +131,7 @@ public class AuthService {
         }
 
         String username = jwtService.extractUsername(request.getMfaToken());
-        if (!jwtService.isMfaToken(request.getMfaToken()) ||
+        if (jwtService.isMfaToken(request.getMfaToken()) ||
             !jwtService.validateToken(request.getMfaToken(), username)) {
             throw new InvalidTokenException("Invalid MFA token");
         }
@@ -143,7 +143,7 @@ public class AuthService {
         // Verify TOTP code
         try {
             int code = Integer.parseInt(request.getTotpCode());
-            if (!totpService.verifyCode(user.getMfaSecret(), code)) {
+            if (totpService.verifyCode(user.getMfaSecret(), code)) {
                 throw new InvalidCredentialsException("Invalid MFA code");
             }
         } catch (NumberFormatException e) {
@@ -187,7 +187,7 @@ public class AuthService {
         // Verify TOTP code
         try {
             int code = Integer.parseInt(totpCode);
-            if (!totpService.verifyCode(user.getMfaSecret(), code)) {
+            if (totpService.verifyCode(user.getMfaSecret(), code)) {
                 throw new InvalidCredentialsException("Invalid MFA code");
             }
         } catch (NumberFormatException e) {
@@ -210,7 +210,7 @@ public class AuthService {
         // Verify TOTP code before disabling
         try {
             int code = Integer.parseInt(totpCode);
-            if (!totpService.verifyCode(user.getMfaSecret(), code)) {
+            if (totpService.verifyCode(user.getMfaSecret(), code)) {
                 throw new InvalidCredentialsException("Invalid MFA code");
             }
         } catch (NumberFormatException e) {
