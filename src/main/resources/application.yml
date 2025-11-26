@@ -20,6 +20,7 @@ elrond:
     cors:
       allowed-origins:
         - "http://localhost:8080"
+        - "http://localhost:5173"
       allowed-methods:
         - "GET"
         - "POST"

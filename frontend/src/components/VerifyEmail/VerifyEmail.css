@@ -1,0 +1,11 @@
+.verify-email-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.verify-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+

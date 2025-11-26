@@ -13,19 +13,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Elrond</name>
     <description>Elrond</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+    <repositories>
+        <repository>
+            <id>dev.uday</id>
+            <url>https://maven.pkg.github.com/UdayKhare09/elrond-security</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <properties>
         <java.version>25</java.version>
         <spring-ai.version>1.0.3</spring-ai.version>
@@ -52,7 +48,7 @@
         <dependency>
             <groupId>dev.uday</groupId>
             <artifactId>elrond-security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
 
     </dependencies>
