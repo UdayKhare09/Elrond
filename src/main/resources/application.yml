@@ -34,7 +34,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: udaykhare77@gmail.com
-    password: uefd ssvg xend kgbw
+    password: one time pass
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
